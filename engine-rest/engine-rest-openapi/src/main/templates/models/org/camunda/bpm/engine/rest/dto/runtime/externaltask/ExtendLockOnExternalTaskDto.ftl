@@ -1,16 +1,13 @@
-<@lib.dto>
-
-  <@lib.property
-      name = "workerId"
-      type = "string"
-      desc = "The ID of a worker who is locking the external task." />
+<@lib.dto extends = "LockExternalTaskDto" >
 
   <@lib.property
       name = "newDuration"
       type = "integer"
       format = "int64"
-      nullable = false
+      deprecated = true
       last = true
-      desc = "An amount of time (in milliseconds). This is the new lock duration starting from the current moment." />
+      desc = "An amount of time (in milliseconds). This is the new lock duration starting from the
+              current moment. **Deprecated:** Please use the `lockDuration` property instead as
+              this property may be removed in future versions." />
 
 </@lib.dto>

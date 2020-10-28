@@ -16,24 +16,24 @@
  */
 package org.camunda.bpm.engine.rest.dto.externaltask;
 
-public class ExtendLockOnExternalTaskDto extends LockExternalTaskDto {
+public class LockExternalTaskDto {
 
-  /**
-   * @deprecated Use {@link #getLockDuration()} to get
-   *    the lock duration for the External Task. This method may be removed in future versions.
-   */
-  @Deprecated
-  public long getNewDuration() {
-    return getLockDuration();
+  protected String workerId;
+  protected long lockDuration;
+
+  public String getWorkerId() {
+    return workerId;
   }
 
-  /**
-   * @deprecated Use {@link #setLockDuration(long)} to set
-   *    the lock duration for the External Task. This method may be removed in future versions.
-   */
-  @Deprecated
-  public void setNewDuration(long newDuration) {
-    setLockDuration(newDuration);
+  public void setWorkerId(String workerId) {
+    this.workerId = workerId;
   }
 
+  public long getLockDuration() {
+    return lockDuration;
+  }
+
+  public void setLockDuration(long lockDuration) {
+    this.lockDuration = lockDuration;
+  }
 }
